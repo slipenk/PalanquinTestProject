@@ -1,4 +1,5 @@
-import org.example.DateSorter;
+package org.slipenk;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

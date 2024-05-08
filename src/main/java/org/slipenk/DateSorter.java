@@ -1,4 +1,4 @@
-package org.example;
+package org.slipenk;
 
 import java.time.LocalDate;
 import java.util.Collection;
