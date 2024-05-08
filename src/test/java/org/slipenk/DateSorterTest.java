@@ -4,8 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 class DateSorterTest {
@@ -70,5 +72,18 @@ class DateSorterTest {
         );
 
         Assertions.assertEquals(expectedSortedDates, sortedDates);
+    }
+
+    @Test
+    void testEmptyList() {
+        List<LocalDate> unsortedDates = new ArrayList<>();
+        Collection<LocalDate> sortedDates = sorter.sortDates(unsortedDates);
+        Assertions.assertEquals(unsortedDates, sortedDates);
+    }
+
+    @Test
+    void testNullList() {
+        Collection<LocalDate> sortedDates = sorter.sortDates(null);
+        Assertions.assertEquals(Collections.emptyList(), sortedDates);
     }
 }

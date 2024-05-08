@@ -2,6 +2,7 @@ package org.slipenk;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,6 +26,8 @@ import java.util.List;
  */
 public class DateSorter {
 
+    private static final String IDENTIFIER_FOR_MONTHS = "R";
+
     /**
      * The implementation of this method should sort dates.
      * The output should be in the following order:
@@ -42,9 +45,14 @@ public class DateSorter {
      * @return the collection of dates now sorted as per the spec
      */
     public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
+
+        if (unsortedDates == null || unsortedDates.isEmpty()) {
+            return Collections.emptyList();
+        }
+
         unsortedDates.sort((date1, date2) -> {
-            boolean hasR1 = date1.getMonth().name().contains("R");
-            boolean hasR2 = date2.getMonth().name().contains("R");
+            boolean hasR1 = date1.getMonth().name().contains(IDENTIFIER_FOR_MONTHS);
+            boolean hasR2 = date2.getMonth().name().contains(IDENTIFIER_FOR_MONTHS);
 
             if (hasR1 && hasR2) {
                 return date1.compareTo(date2);
