@@ -7,7 +7,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
         DateSorter dateSorter = new DateSorter();
 
         System.out.println(dateSorter.sortDates(new ArrayList<>(List.of(

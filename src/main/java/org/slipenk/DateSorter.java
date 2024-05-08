@@ -45,7 +45,6 @@ public class DateSorter {
      * @return the collection of dates now sorted as per the spec
      */
     public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
-
         if (unsortedDates == null || unsortedDates.isEmpty()) {
             return Collections.emptyList();
         }
